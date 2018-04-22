@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>RandoMnize</title>
+    </head>
+    <body> <center>
+        <h1>Último # obtenido = ¡{{random}}!</h1>
+        <p>
+            Elija la opción que desee:
+        </p>
+
+
+	<form action="." method="POST">
+	  Escriba un número del 0 al 100 (incluidos) para saber cual es el último valor aleatorio obtenido menor que dicho número:
+	  <br>
+	<input type="number" name="umbral", min="0", max="100", value="50">
+	  <input type="submit" name="b_choice" value="UMBRAL">	 
+
+
+
+	<br><br>
+	  Obtener la media de los numeros: 
+	  <input type="submit" value="MEDIA" name="b_choice">
+	<br><br>
+
+
+
+	  Obtener graficas sobre la base de datos externa: 
+	  <input type="submit" value="GRAFICAS" name="b_choice">
+	</form>
+    </center> </body>
+	<script>
+		setInterval(ajaxCall, 120000); //Cada 2 minutos se recarga y vuelve a solicitar un número.
+		function ajaxCall() {
+				window.location.reload()
+		}
+
+	</script>
+</html>

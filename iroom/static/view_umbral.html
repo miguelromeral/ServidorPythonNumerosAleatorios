@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+	    <title>
+	        Umbral de {{umbral}}
+	    </title>
+    </head>
+	<body><center>
+	  <h1>Umbral seleccionado: {{umbral}}</h1>
+
+	<a href="#bdl">Ir a la BD local</a><br>
+	<a href="#bde">Ir a la BD externa</a><br>
+	<a href="#final">Ir al final de la página</a><br> <br>
+
+<hr>
+		<a name="bdl"/>
+		<strong>BASE DE DATOS LOCAL</strong>
+	  <p>
+			Existen un total de <strong>{{total_num}}</strong> / {{total}} numeros que son menores que {{umbral}} en la base de datos local.
+		</p>
+
+	<p>
+
+	El último número registrado menor que {{umbral}} es <strong>{{utl[0]}}</strong>, que fue añadido el día <strong>{{utl[1]}}</strong>
+
+	</p>
+		Los demás números que cumplen dicha condición son los siguientes:
+
+		<br>	
+<table border="1" id="tabla">
+  <tr>
+    <th><strong>NÚMERO</strong></th>
+    <th><strong>FECHA</strong></th>
+  </tr>
+  
+{% for el in lista %}
+	<tr>
+    <td>{{ el[0] }}</td>
+    <td>{{ el[1] }}</td>
+  </tr>
+{% endfor %}
+</table>
+
+
+<style>
+#tabla {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: cover;
+}
+
+#tabla td, #tabla th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#tabla tr:nth-child(even){background-color: #f2f2f2;}
+
+#tabla tr:hover {background-color: #ddd;}
+
+#tabla th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3366ff;
+    color: white;
+}
+</style>
+
+	
+	<br><a href="#bdl">Ir a la BD local</a><br>
+	<a href="#bde">Ir a la BD externa</a><br>
+	<a href="#final">Ir al final de la página</a><br> <br>
+<hr>
+
+		<a name="bde"/>
+		<strong>BASE DE DATOS EXTERNA</strong>
+	  <p>
+			Existen un total de <strong>{{total_num_ex}}</strong> / {{total_ex}} numeros que son menores que {{umbral}} en la base de datos local.
+		</p>
+
+	<p>
+
+	El último número registrado menor que {{umbral}} es <strong>{{ute[0]}}</strong>, que fue añadido el día <strong>{{ute[1]}}</strong>
+
+	</p>
+		Los demás números que cumplen dicha condición son los siguientes:
+		<br>	
+<table border="1" id="tabla">
+  <tr>
+    <th><strong>NÚMERO</strong></th>
+    <th><strong>FECHA</strong></th>
+  </tr>
+  
+{% for el in lista_ex %}
+	<tr>
+    <td>{{ el[0] }}</td>
+    <td>{{ el[1] }}</td>
+  </tr>
+{% endfor %}
+</table>
+	<br><br>
+<a href="#bdl">Ir a la BD local</a> <br>
+	<a href="#bde">Ir a la BD externa</a> <br><br>
+	<br>
+	
+		<a name="final"/>
+<form> 
+	  <input type="submit" value="VOLVER AL MENÚ PRINCIPAL" name="b_back_main_menu" action="main.html">
+	</form>
+	</center></body>
+	<br><br>
+</html>
